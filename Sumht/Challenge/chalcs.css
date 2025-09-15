@@ -1,0 +1,48 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    font-family: "Roboto","Arial",sans-serif;
+    background-color: rgba(28,35,38,255);
+    color: bisque;
+}
+.btn-grid {
+    /* display: grid;  */
+    display: block grid;
+    gap: 30px;
+    /* grid-template-columns: repeat(1,auto); */
+    
+}
+button {
+    font-family: "Roboto","Arial",sans-serif;
+    background-color: rgba(28,35,38,255);
+    color: bisque;
+    padding-block: 10px;
+    cursor: pointer;
+    /* margin: 20px; */
+    border-radius: 5px;
+    /* padding-inline: 80px; */
+}
+.rid-ans {
+    border: none;
+    background-color: rgba(28,35,38,255);
+    color: bisque;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#dif1 {
+    width: 65%;
+}
+#dif2 {
+    border-left: 1px solid;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 30%;
+}
+img {
+    width: 40%;
+}

@@ -1,0 +1,37 @@
+body{
+    background-color: teal;
+    padding-inline: 20%;
+}
+.regBox{
+    padding: 20px;
+    background-color: white;
+    /* text-align: center; */
+    box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.7);
+}
+* {
+    box-sizing: border-box;
+}
+input[type='text'],input[type='password']{
+    width: 100%;
+    padding: 15px;
+    background: whitesmoke;
+    border: none;
+    display: inline-block;
+    margin: 5px 0px 22px 0px;
+}
+input[type='text']:focus,input[type='password']:focus{
+    background-color: #dddd;
+    outline: none;
+}
+button[type='submit']{
+    background-color: teal;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+button[type='submit']:hover{
+    opacity: 1;
+}

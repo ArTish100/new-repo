@@ -1,0 +1,28 @@
+.parent{
+    background-color: blueviolet;
+    height: 200px;
+    width: 200px;
+    transition-duration: 1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    justify-content: center;
+
+}
+
+.parent:hover {
+    background-color: aqua;
+    transform: rotate(45deg);
+    
+    animation: animname 0.5s linear; 
+}
+@keyframes animname {
+    25%{
+        scale: 1.25;
+    }50%{
+        scale: 1.50;
+    }75%{
+        scale: 1.75;
+    }100%{
+        scale: 2;
+    }
+}

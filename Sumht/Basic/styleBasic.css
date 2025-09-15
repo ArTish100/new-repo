@@ -1,0 +1,15 @@
+html{
+    border: solid;
+    border-color: white;
+    padding-bottom: 22%;
+}
+body {
+    background-color: rgb(39, 42, 108);
+    color: white;
+    font-family:"Roboto","Arial",sans-serif;
+    height: 79%;
+    padding-left: 2%;
+}
+a {
+    color: grey;
+}
