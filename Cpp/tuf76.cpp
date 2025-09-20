@@ -1,6 +1,4 @@
 //Print Root to Node Path in a Binary Tree
-//Merge 2 BST's
-
 #include <iostream>
 #include <algorithm>
 #include <climits>
