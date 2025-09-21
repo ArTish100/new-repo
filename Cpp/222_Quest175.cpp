@@ -1,4 +1,4 @@
-//Minimum time taken to BURN the Binary Tree from a Node
+//222. Count Complete Tree Nodes
 
 #include <iostream>
 #include <algorithm>
