@@ -1,10 +1,11 @@
-//222. Count Complete Tree Nodes
+//297. Serialize and Deserialize Binary Tree
 
 #include <iostream>
 #include <algorithm>
 #include <climits>
 #include <vector>
 #include <map>
+#include <sstream>
 #include <set>
 #include <queue>
 #include <unordered_map>
@@ -83,38 +84,61 @@ public:
                 break;
         }
     }
-    int checkLeft(TreeNode* root){
-        int count=0;
-        while(root){
-            root = root->left;
-            count++;
+    string serialize(TreeNode* root) {
+        queue<TreeNode*> qtree;
+        qtree.push(root);
+        TreeNode* temp;
+        int qsize;
+        int count;
+        string data="";
+        while(!qtree.empty()){
+            temp = qtree.front();
+            qtree.pop();
+            if(temp==NULL)
+                data+="#,";
+            else{
+                data+=to_string(temp->val)+',';
+                qtree.push(temp->left);
+                qtree.push(temp->right);
+            }
+            
         }
-        return count;
+        return data;
     }
-    int checkRight(TreeNode* root){
-        int count=0;
-        while(root){
-            root = root->right;
-            count++;
+    
+    // Decodes your encoded data to tree.
+    TreeNode* deserialize(string data) {
+        queue<TreeNode*> qtree;
+        stringstream d(data);
+        string nodeData;
+        getline(d, nodeData, ',');
+        TreeNode* root = new TreeNode(stoi(nodeData));
+        qtree.push(root);
+        TreeNode* temp;
+        while(!qtree.empty()){
+            temp = qtree.front();
+            qtree.pop();
+            getline(d, nodeData, ',');
+            if(nodeData != "#"){
+                temp->left = new TreeNode(stoi(nodeData));
+                qtree.push(temp->left);
+            }
+            getline(d, nodeData, ',');
+            if(nodeData != "#"){
+                temp->right = new TreeNode(stoi(nodeData));
+                qtree.push(temp->right);
+            }
         }
-        return count;
-    }
-    int countNodes(TreeNode* root) {
-        if(root==NULL)
-            return 0;
-        int cleft = checkLeft(root);
-        int cright = checkRight(root);
-        if(cleft!=cright)
-            return 1+countNodes(root->left)+countNodes(root->right);
-        return ((1<<cleft)-1);
+        return root;
     }
 };
 
 int main(){
     Solution S;
     int N = -1;
-    vector<int> vec = {1,2,3,4,5,6};
+    vector<int> vec = {1,2,3,N,N,6};
     TreeNode* root = S.constructTree(vec);
     S.printTree(root);
-    cout<<S.countNodes(root);
+    TreeNode* ans = S.deserialize(S.serialize(root));
+    S.printTree(ans);
 }
