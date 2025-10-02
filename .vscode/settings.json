@@ -13,6 +13,10 @@
         "unordered_set": "cpp",
         "list": "cpp",
         "set": "cpp",
-        "algorithm": "cpp"
-    }
+        "algorithm": "cpp",
+        "xhash": "cpp",
+        "stack": "cpp",
+        "cstdlib": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
